@@ -16,24 +16,6 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/*
- * @Configuration indicates that this class contains methods annotated with @Beans
- * producing beans manageable by spring container. In our case, this class represents
- * hibernate configuration.
- * 
- * @ComponentScan provideswhere to look for spring manages beans and classes.
- * 
- * @EnableTransactionManagement enables spring's annotation-driven transaction management
- * capability.
- * 
- * @PropertySource declares a set of properties (defined in a properties file in
- * application classpath) in spring run-time Environment, providing flexibility to have
- * different values in different application environments.
- * 
- * Este código es siempre el mismo (a grandes rasgos), siempre va a haber que configurar
- * los mismos parámetros, aunque cambiarán detalles como paquetes, archivos...
- */
-
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"com.capgemini.config"})
