@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.dao.ClienteDao;
 import com.capgemini.dao.PropiedadDao;
+import com.capgemini.dao.ReservaDao;
 import com.capgemini.model.Cliente;
 import com.capgemini.model.FormularioDto;
 import com.capgemini.model.Reserva;
