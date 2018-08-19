@@ -7,7 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
-<link href='<c:url value="/resources/css/bootstrap.css"></c:url>'
+<link
+	href='<c:url value="/resources/css/bootstrap.css"></c:url>'
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,3 +31,4 @@
 	</script>
 </body>
 </html>
+
