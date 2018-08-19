@@ -21,6 +21,11 @@ public class PropiedadDaoImpl extends AbstractDao<Integer, Propiedad> implements
 			return (List<Propiedad>) criteria.list();
 		 
 	}
+
+	@Override
+	public Propiedad getPropiedadById(Integer id) {
+		return getByKey(id);
+	}
 	
 
 }

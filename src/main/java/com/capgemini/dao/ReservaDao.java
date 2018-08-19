@@ -9,8 +9,6 @@ import com.capgemini.model.Reserva;
 public interface ReservaDao {
 	
 	void saveReserva(Reserva reserva);
-    
-    
     List<Reserva> findAllReservas();
 
 }
