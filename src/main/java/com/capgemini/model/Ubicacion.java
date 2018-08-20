@@ -22,6 +22,7 @@ public class Ubicacion {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id_ubicacion;
 	
 	@NotEmpty

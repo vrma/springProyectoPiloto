@@ -22,6 +22,7 @@ public class tipoPropiedad {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id_tipoPropiedad;
 	
 	@NotEmpty

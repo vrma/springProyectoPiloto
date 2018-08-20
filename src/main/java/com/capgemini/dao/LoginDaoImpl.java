@@ -3,10 +3,12 @@ package com.capgemini.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.springframework.stereotype.Repository;
 
 import com.capgemini.model.Login;
 import com.capgemini.model.Propiedad;
 
+@Repository("loginDao")
 public class LoginDaoImpl extends AbstractDao<Integer, Propiedad> implements LoginDao {
 
 	@Override

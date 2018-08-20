@@ -24,16 +24,18 @@ que sale toda la información correctamente se implementara aqui -->
 			<tr>
 			<td>${propiedades.direccion}</td>
 			<td>${propiedades.nombre}</td>
-			<td> 
-				<c:forEach items="${propiedades.ubicacion}" var="ubicacion">
-            		${ubicacion.ubicacion}
-     			</c:forEach>
-     		</td>
-     		<td> 
-				<c:forEach items="${propiedades.tipo_propiedad}" var="tipo">
-            		${tipo.descripcion}
-     			</c:forEach>
-     		</td>
+			<td>${propiedades.ubicacion.ubicacion}</td>
+			<td>${propiedades.tipoPropiedad.descripcion}</td>
+<!-- 			<td>  -->
+<%-- 				<c:forEach items="${propiedades.ubicacion}" var="ubicacion"> --%>
+<%--             		${ubicacion.ubicacion} --%>
+<%--      			</c:forEach> --%>
+<!--      		</td> -->
+<!--      		<td>  -->
+<%-- 				<c:forEach items="${propiedades.tipo_propiedad}" var="tipo"> --%>
+<%--             		${tipo.descripcion} --%>
+<%--      			</c:forEach> --%>
+<!--      		</td> -->
 			
 			</tr>
 		</c:forEach>

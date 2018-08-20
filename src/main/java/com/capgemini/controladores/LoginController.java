@@ -21,7 +21,7 @@ import com.capgemini.services.LoginService;
 public class LoginController {
 	
 	@Autowired
-	LoginService service;
+	LoginService loginService;
 	
 	@Autowired
 	MessageSource messageSource;
@@ -31,7 +31,7 @@ public class LoginController {
 		
 		String r = null;
 		
-		List<Login> usuarios = service.getUsuarios();
+		List<Login> usuarios = loginService.getUsuarios();
 		ArrayList<Login> u = (ArrayList<Login>) usuarios;
 		for(Login l : u) {
 			if(l.equals(login)) {
