@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -30,12 +32,13 @@ public class Propiedad {
 	@Column(name = "nombre", unique=true, nullable = false)
 	private String nombre;
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "tipo_propiedad_id")
+	private tipoPropiedad tipoPropiedad;
 	
-	@OneToMany(mappedBy="tipo_propiedad", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.REMOVE})
-	private Propiedad propiedades; 
-	
-	@OneToMany(mappedBy="ubicacion", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.REMOVE})
-	private Ubicacion ubicaciones;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ubicacion_id")
+	private Ubicacion ubicacion;
 
 	public int getId_propiedad() {
 		return id_propiedad;
@@ -61,20 +64,34 @@ public class Propiedad {
 		this.nombre = nombre;
 	}
 
-	public Propiedad getPropiedades() {
-		return propiedades;
+	
+
+	/**
+	 * @return the tipoPropiedad
+	 */
+	public tipoPropiedad getTipoPropiedad() {
+		return tipoPropiedad;
 	}
 
-	public void setPropiedades(Propiedad propiedades) {
-		this.propiedades = propiedades;
+	/**
+	 * @param tipoPropiedad the tipoPropiedad to set
+	 */
+	public void setTipoPropiedad(tipoPropiedad tipoPropiedad) {
+		this.tipoPropiedad = tipoPropiedad;
 	}
 
-	public Ubicacion getUbicaciones() {
-		return ubicaciones;
+	/**
+	 * @return the ubicacion
+	 */
+	public Ubicacion getUbicacion() {
+		return ubicacion;
 	}
 
-	public void setUbicaciones(Ubicacion ubicaciones) {
-		this.ubicaciones = ubicaciones;
+	/**
+	 * @param ubicacion the ubicacion to set
+	 */
+	public void setUbicacion(Ubicacion ubicacion) {
+		this.ubicacion = ubicacion;
 	}
 
 	@Override
@@ -99,11 +116,16 @@ public class Propiedad {
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Propiedad [id_propiedad=" + id_propiedad + ", direccion=" + direccion + ", nombre=" + nombre
-				+ ", propiedades=" + propiedades + ", ubicaciones=" + ubicaciones + "]";
-	} 
+				+ ", tipoPropiedad=" + tipoPropiedad + ", ubicacion=" + ubicacion + "]";
+	}
+
+	
 	
 	
 	

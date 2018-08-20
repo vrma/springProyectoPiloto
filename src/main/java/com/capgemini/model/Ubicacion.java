@@ -1,13 +1,17 @@
 package com.capgemini.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,9 +28,8 @@ public class Ubicacion {
 	@Column(name = "ubicacion", unique=true, nullable = false)
 	private String ubicacion;
 	
-	@ManyToOne(cascade = {CascadeType.REMOVE, CascadeType.REMOVE})
-	@JoinColumn(name = "ubicacion_id")
-	private Propiedad prop1;
+	@OneToMany(mappedBy = "ubicacion", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.REMOVE})
+	private List<Propiedad> propiedades;
 
 	public int getId_ubicacion() {
 		return id_ubicacion;
@@ -44,18 +47,30 @@ public class Ubicacion {
 		this.ubicacion = ubicacion;
 	}
 
-	public Propiedad getProp1() {
-		return prop1;
+	/**
+	 * @return the propiedades
+	 */
+	public List<Propiedad> getPropiedades() {
+		return propiedades;
 	}
 
-	public void setProp1(Propiedad prop1) {
-		this.prop1 = prop1;
+	/**
+	 * @param propiedades the propiedades to set
+	 */
+	public void setPropiedades(List<Propiedad> propiedades) {
+		this.propiedades = propiedades;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Ubicacion [id_ubicacion=" + id_ubicacion + ", ubicacion=" + ubicacion + ", prop1=" + prop1 + "]";
+		return "Ubicacion [id_ubicacion=" + id_ubicacion + ", ubicacion=" + ubicacion + ", propiedades=" + propiedades
+				+ "]";
 	}
+
+	
 	
 
 
