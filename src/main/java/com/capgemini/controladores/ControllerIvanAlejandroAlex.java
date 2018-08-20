@@ -15,7 +15,7 @@ import com.capgemini.services.PropiedadService;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/propiedades")
 public class ControllerIvanAlejandroAlex {
 	
 	@Autowired
