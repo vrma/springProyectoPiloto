@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form:form action="${pageContext.request.contextPath}/loginProcess" modelAttribute="login" mehtod="post">
+<form:form modelAttribute="login" mehtod="post">
 <h3>Bootstrap no rula</h3>
   <div class="form-group">
     <label for="userInput">Usuario: </label>

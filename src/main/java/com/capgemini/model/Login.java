@@ -13,6 +13,7 @@ public class Login {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id_login;
 	
 	@Column(name = "login", unique=true, nullable = false)
@@ -21,10 +22,6 @@ public class Login {
 	@Column(name = "password", unique=false, nullable = false)
 	private String password;
 
-	public Login() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getId_login() {
 		return id_login;

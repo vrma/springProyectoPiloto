@@ -9,7 +9,7 @@ import com.capgemini.model.Login;
 import com.capgemini.model.Propiedad;
 
 @Repository("loginDao")
-public class LoginDaoImpl extends AbstractDao<Integer, Propiedad> implements LoginDao {
+public class LoginDaoImpl extends AbstractDao<Integer, Login> implements LoginDao {
 
 	@Override
 	@SuppressWarnings("unchecked")
