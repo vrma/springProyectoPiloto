@@ -17,7 +17,6 @@ import com.capgemini.model.Propiedad;
 import com.capgemini.services.LoginService;
 
 @Controller
-@RequestMapping("/login")
 public class LoginController {
 	
 	@Autowired
@@ -26,11 +25,10 @@ public class LoginController {
 	@Autowired
 	MessageSource messageSource;
 	
-	@RequestMapping(value = { "/login", }, method = RequestMethod.POST)
-	public String login(ModelMap model, @ModelAttribute Login login) {
+	@RequestMapping(value = { "/loginProcess", }, method = RequestMethod.POST)
+	public String loginProcess(ModelMap model, @ModelAttribute Login login) {
 		
 		String r = null;
-		
 		List<Login> usuarios = loginService.getUsuarios();
 		ArrayList<Login> u = (ArrayList<Login>) usuarios;
 		for(Login l : u) {
@@ -38,8 +36,9 @@ public class LoginController {
 				r ="propiedades";
 			}
 			
-			else
+			else {
 				r="login";
+			}
 			
 			
 		}

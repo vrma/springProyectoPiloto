@@ -8,14 +8,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+
 <link
-	href='<c:url value="/resources/css/bootstrap.css"></c:url>'
-	rel="stylesheet" type="text/css" />
+	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<form:form action="../../LoginController.java" modelAttribute="login" mehtod="post">
-<h3>bootstrap no rula</h3>
+<form:form action="${pageContext.request.contextPath}/loginProcess" modelAttribute="login" mehtod="post">
+<h3>Bootstrap no rula</h3>
   <div class="form-group">
     <label for="userInput">Usuario: </label>
     <form:input type="user" class="form-control" id="userInput" path="login" placeholder="Usuario"/>

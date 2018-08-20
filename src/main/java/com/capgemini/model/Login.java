@@ -21,6 +21,11 @@ public class Login {
 	@Column(name = "password", unique=false, nullable = false)
 	private String password;
 
+	public Login() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId_login() {
 		return id_login;
 	}
