@@ -8,10 +8,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/bootstrap/js/jquery-3.3.1.js">
+</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.js">
+</script>
 
-<link
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-</head>
+<link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <body>
 
 <form:form modelAttribute="login" mehtod="post">
@@ -26,10 +28,7 @@
   </div>
   <form:button type="submit" class="btn btn-danger">Entrar</form:button>
 </form:form>
-	<script type="text/javascript" src="/resources/js/jquery-3.3.1.js">
-	</script>
-	<script type="text/javascript" src="/resources/js/bootstrap.js">
-	</script>
+	
 </body>
 </html>
 

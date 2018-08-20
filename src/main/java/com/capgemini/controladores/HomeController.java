@@ -43,6 +43,7 @@ public class HomeController {
 		for(Login l : usuarios) {
 			if(l.equals(login)) {
 				r ="propiedades";
+				break;
 			}			
 			
 		}
