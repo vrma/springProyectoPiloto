@@ -3,21 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>University Enrollments</title>
-<script src="${pageContext.request.contextPath}/resources/bootstrap/js/jquery-3.3.1.js" ></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css">
-<link href="/resources/css/proyecto.css" rel="stylesheet" type="text/css"/>
-<script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.js" ></script>
-<LINK REL=StyleSheet HREF="${pageContext.request.contextPath}/resources/css/proyecto.css" TYPE="text/css" MEDIA=screen>
-
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Lista de Propiedades</title>
+<script src="${pageContext.request.contextPath}/src/main/webapp/resources/bootstrap/js/jquery-3.3.1.js" ></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/src/main/webapp/bootstrap/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/src/main/webapp/resources/bootstrap/css/bootstrap-theme.css">
+<script src="${pageContext.request.contextPath}/src/main/webapp/resources/bootstrap/js/bootstrap.js" ></script>
+<LINK REL=StyleSheet HREF="${pageContext.request.contextPath}/src/main/webapp/resources/css/proyecto.css" TYPE="text/css" MEDIA=screen>
 </head>
-
 <!-- Se crea esta tabla para ver el listado de propiedades, se creara el diseño por separado y cuando se pruebe
 que sale toda la información correctamente se implementara aqui -->
 <body>
-	<h2>Listado de Propiedades</h2>	
 	<table>
 		<c:forEach items="${propiedades}" var="propiedades">
 			<div class="container margin_60">
