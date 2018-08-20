@@ -1,10 +1,14 @@
 package com.capgemini.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -48,6 +52,9 @@ public class Cliente {
 	@NotEmpty
 	@Column(name = "telefono", unique = true, nullable = false)
 	private String telefono;
+	
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
+	private List<Reserva> reservas;
 
 	/**
 	 * @return the id
@@ -145,6 +152,22 @@ public class Cliente {
 	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+	
+	
+
+	/**
+	 * @return the reservas
+	 */
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
+
+	/**
+	 * @param reservas the reservas to set
+	 */
+	public void setReservas(List<Reserva> reservas) {
+		this.reservas = reservas;
 	}
 
 	/* (non-Javadoc)
