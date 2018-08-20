@@ -40,6 +40,9 @@ public class Propiedad {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ubicacion_id")
 	private Ubicacion ubicacion;
+	
+	@OneToMany(mappedBy = "propiedad", fetch = FetchType.EAGER)
+	private List<Reserva> reservas;
 
 	public int getId_propiedad() {
 		return id_propiedad;
@@ -94,6 +97,24 @@ public class Propiedad {
 	public void setUbicacion(Ubicacion ubicacion) {
 		this.ubicacion = ubicacion;
 	}
+	
+	
+
+	
+
+	/**
+	 * @return the reserva
+	 */
+	public List<Reserva> getReserva() {
+		return reservas;
+	}
+
+	/**
+	 * @param reserva the reserva to set
+	 */
+	public void setReserva(List<Reserva> reserva) {
+		this.reservas = reserva;
+	}
 
 	@Override
 	public int hashCode() {
@@ -123,8 +144,11 @@ public class Propiedad {
 	@Override
 	public String toString() {
 		return "Propiedad [id_propiedad=" + id_propiedad + ", direccion=" + direccion + ", nombre=" + nombre
-				+ ", tipoPropiedad=" + tipoPropiedad + ", ubicacion=" + ubicacion + "]";
+				+ ", tipoPropiedad=" + tipoPropiedad + ", ubicacion=" + ubicacion + ", reservas=" + reservas
+				+ "]";
 	}
+
+	
 
 	
 	

@@ -24,8 +24,8 @@ que sale toda la información correctamente se implementara aqui -->
 			<tr>
 			<td>${propiedades.direccion}</td>
 			<td>${propiedades.nombre}</td>
-			<td>${propiedades.ubicacion.ubicacion}</td>
-			<td>${propiedades.tipoPropiedad.descripcion}</td>
+			<td>${propiedades.ubicacion}</td>
+			<td>${propiedades.tipoPropiedad}</td>
 <!-- 			<td>  -->
 <%-- 				<c:forEach items="${propiedades.ubicacion}" var="ubicacion"> --%>
 <%--             		${ubicacion.ubicacion} --%>

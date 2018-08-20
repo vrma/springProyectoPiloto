@@ -10,7 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.capgemini.model.Propiedad;
+import com.capgemini.model.PropiedadDto;
 import com.capgemini.services.PropiedadService;
 
 
@@ -30,7 +30,7 @@ public class ControllerIvanAlejandroAlex {
 		@RequestMapping(value = { "/propiedades", }, method = RequestMethod.GET)
 		public String listEmployees(ModelMap model) {
 
-			List<Propiedad> propiedades = service.getPropiedades();
+			List<PropiedadDto> propiedades = service.getPropiedades();
 			model.addAttribute("propiedades", propiedades);
 			return "propiedades";
 		}
