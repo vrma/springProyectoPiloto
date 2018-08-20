@@ -10,13 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import com.capgemini.model.Propiedad;
 
+@Repository("propiedadDao")
 public class PropiedadDaoImpl extends AbstractDao<Integer, Propiedad> implements PropiedadDao {
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Propiedad> getPropiedades() {
 			Criteria criteria = createEntityCriteria();
-			
 			criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 			return (List<Propiedad>) criteria.list();
 		 
