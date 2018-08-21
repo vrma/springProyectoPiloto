@@ -27,5 +27,12 @@ public class PropiedadDaoImpl extends AbstractDao<Integer, Propiedad> implements
 		return getByKey(id);
 	}
 	
+	@Override
+	public Propiedad getPropiedadByDireccion(String direccion) {
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eqOrIsNull("direccion", direccion));
+		return (Propiedad) criteria.uniqueResult();
+	}
+	
 
 }

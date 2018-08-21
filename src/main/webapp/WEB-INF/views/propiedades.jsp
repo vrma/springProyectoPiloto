@@ -56,7 +56,7 @@ que sale toda la información correctamente se implementara aqui -->
 
 						</div>
 						<div class="carbox-read-more">
-							<a href={url} class="btn btn-link btn-block"> Reservar </a>
+							<a href="reservar-${propiedades.direccion}" class="btn btn-link btn-block"> Reservar </a>
 						</div>
 					</div>
 				</div>

@@ -47,7 +47,7 @@ public class FormularioServiceImpl implements FormularioService {
 		reserva.setFechaSalida(formulario.getFechaSalida());
 		// Necesito en PropiedadDao un método que permita devolver una única propiedad a partir de
 		// algún identificador (id, dirección...)
-		reserva.setPropiedad(propiedadDao.getPropiedadById(formulario.getPropiedad()));
+		reserva.setPropiedad(propiedadDao.getPropiedadByDireccion(formulario.getPropiedad()));
 		reservaDao.saveReserva(reserva);
 	}
 

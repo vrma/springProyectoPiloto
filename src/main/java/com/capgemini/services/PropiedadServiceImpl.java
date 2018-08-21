@@ -3,6 +3,7 @@ package com.capgemini.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +40,11 @@ public class PropiedadServiceImpl implements PropiedadService{
 		for (Propiedad p : propiedades)
 			dto.add(toDto(p));
 		return dto;
+	}
+	
+	@Override
+	public PropiedadDto getPropiedad(String direccion) {
+		return toDto(propiedadService.getPropiedadByDireccion(direccion));
 	}
 	
 

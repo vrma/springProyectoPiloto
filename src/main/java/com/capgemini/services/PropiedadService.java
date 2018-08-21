@@ -8,5 +8,5 @@ import com.capgemini.model.PropiedadDto;
 public interface PropiedadService {
 	
 	List<PropiedadDto> getPropiedades();
-
+	PropiedadDto getPropiedad(String direccion);
 }

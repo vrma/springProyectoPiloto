@@ -8,11 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.capgemini.model.FormularioDto;
 import com.capgemini.model.Login;
 import com.capgemini.model.PropiedadDto;
+import com.capgemini.services.FormularioService;
 import com.capgemini.services.LoginService;
 import com.capgemini.services.PropiedadService;
 
@@ -28,6 +31,9 @@ public class HomeController {
 	
 	@Autowired
 	private PropiedadService propiedadService;
+	
+	@Autowired
+	private FormularioService formService;
 	
 	@RequestMapping(value = {"/"} , method = RequestMethod.GET)
 	public String login(Model model) {
@@ -58,4 +64,24 @@ public class HomeController {
 		model.addAttribute("propiedades", propiedades);
 		return "propiedades";
 	}
+	
+	@RequestMapping(value = { "/reservar-{direccion}" }, method = RequestMethod.GET)
+	public String vistareservas(ModelMap model, @PathVariable String direccion) {
+		FormularioDto form = new FormularioDto();
+		form.setPropiedad(direccion);
+		PropiedadDto p = propiedadService.getPropiedad(direccion);
+		model.addAttribute("propiedad", p);
+		model.addAttribute("reservas", form);
+		return "reservar";
+
+	}
+	
+	
+	@RequestMapping(value = { "/reservar-{direccion}" }, method = RequestMethod.POST)
+	public String enviareservas(ModelMap model, @PathVariable String direccion, FormularioDto reservas) {
+		formService.createReserva(reservas);
+		return "redirect:/propiedades";
+	}
+	
+	
 }

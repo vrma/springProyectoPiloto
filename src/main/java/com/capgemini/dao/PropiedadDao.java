@@ -9,4 +9,5 @@ public interface PropiedadDao {
 	List<Propiedad> getPropiedades();
 
 	Propiedad getPropiedadById(Integer id);
+	Propiedad getPropiedadByDireccion(String direccion);
 }

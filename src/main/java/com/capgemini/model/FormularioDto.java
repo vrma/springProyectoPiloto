@@ -1,6 +1,8 @@
 package com.capgemini.model;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /*
  * DTO con los campos que (asumo) irán en el formulario de reserva. El identificador de la propiedad
@@ -14,8 +16,10 @@ public class FormularioDto {
 	private String dni, correo, telefono;
 	
 	// Campos de la reserva
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
 	private LocalDate fechaEntrada, fechaSalida;
-	private Integer propiedad;
+	private String propiedad;
 	/**
 	 * @return the nombre
 	 */
@@ -115,13 +119,13 @@ public class FormularioDto {
 	/**
 	 * @return the propiedad
 	 */
-	public Integer getPropiedad() {
+	public String getPropiedad() {
 		return propiedad;
 	}
 	/**
 	 * @param propiedad the propiedad to set
 	 */
-	public void setPropiedad(Integer propiedad) {
+	public void setPropiedad(String propiedad) {
 		this.propiedad = propiedad;
 	}
 	
