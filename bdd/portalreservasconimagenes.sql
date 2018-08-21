@@ -86,6 +86,7 @@ CREATE TABLE `propiedades` (
   `nombre` varchar(45) DEFAULT NULL,
   `ubicacion_id` int(11) NOT NULL,
   `tipo_propiedad_id` int(11) NOT NULL,
+  `imagen` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `direccion_UNIQUE` (`direccion`),
   KEY `fk_propiedades_ubicacion1_idx` (`ubicacion_id`),
@@ -101,7 +102,7 @@ CREATE TABLE `propiedades` (
 
 LOCK TABLES `propiedades` WRITE;
 /*!40000 ALTER TABLE `propiedades` DISABLE KEYS */;
-INSERT INTO `propiedades` VALUES (1,'Travesia de la guia numero 10','Casa Ivan',1,1),(2,'Las magnolias 270','Casa Adri',1,2),(3,'Casa el Arbeyal','Casa Nacho',1,3),(4,'Monte Deva','Casa Javier',1,2),(5,'Avenida la playa 20','Hotel NH',1,4),(6,'Ernesto Winter 10','Ibis Hotel',3,4),(7,'Calle del pilar','Casa Pelayo',2,1),(8,'Calle Uria','Casa Alexander',2,1),(9,'Avenida de Oviedo','Hotel NH',3,4),(10,'Avenida Principe Asturias','Hotel Abba',3,4),(11,'Calle General','Ibis Hotel',3,4),(12,'Calle de Perlora numero 1','Casa Pablo',4,3),(13,'Calle de Perlora numero 2','Casa azul',4,3),(14,'Calle de Perlora numero 3','Casa Sergio',4,3),(15,'Calle de Perlora numero 4 ','Casa Alejandro',4,3),(16,'Calle Anselmo solar numero 3','Casa Chechu',5,1),(17,'Camino del rubin numero 1','Casa Alvaro',5,1),(18,'Calle Brasil','Casa Eva',5,1),(19,'Calle Peru','Casa Paula',5,3),(20,'Calle la Amistad','Casa Ainhoa',5,2);
+INSERT INTO `propiedades` VALUES (1,'Travesia de la guia numero 10','Casa Ivan',1,1,'casaivan.jpg'),(2,'Las magnolias 270','Casa Adri',1,2,'casarural1.jpg'),(3,'Casa el Arbeyal','Casa Nacho',1,3,'casaplaya1.jpg'),(4,'Monte Deva','Casa Javier',1,2,'casarural2.jpg'),(5,'Avenida la playa 20','Hotel NH',1,4,'hotelnh.jpg'),(6,'Ernesto Winter 10','Ibis Hotel',3,4,'ibis.jpg'),(7,'Calle del pilar','Casa Pelayo',2,1,'casapelayo.jpg'),(8,'Calle Uria','Casa Alexander',2,1,'casaalexander.jpg'),(9,'Avenida de Oviedo','Hotel NH',3,4,'hotelnh.jpg'),(10,'Avenida Principe Asturias','Hotel Abba',3,4,'abba.jpg'),(11,'Calle General','Ibis Hotel',3,4,'ibis.jpg'),(12,'Calle de Perlora numero 1','Casa Pablo',4,3,'casaplaya2.jpg'),(13,'Calle de Perlora numero 2','Casa azul',4,3,'casaplaya3.jpg'),(14,'Calle de Perlora numero 3','Casa Sergio',4,3,'casaplaya4.jpg'),(15,'Calle de Perlora numero 4 ','Casa Alejandro',4,3,'casaplaya5.jpg'),(16,'Calle Anselmo solar numero 3','Casa Chechu',5,1,'casachechu.jpg'),(17,'Camino del rubin numero 1','Casa Alvaro',5,1,'casaalvaro.jpg'),(18,'Calle Brasil','Casa Eva',5,1,'casaeva.jpg'),(19,'Calle Peru','Casa Paula',5,3,'casaplaya6.jpg'),(20,'Calle la Amistad','Casa Ainhoa',5,2,'casarural3.jpg');
 /*!40000 ALTER TABLE `propiedades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-17  8:36:11
+-- Dump completed on 2018-08-21  9:19:24
