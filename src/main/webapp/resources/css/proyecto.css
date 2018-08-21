@@ -1,11 +1,10 @@
-.margin_60 {
-    padding-top: 60px;
-    padding-bottom: 60px;
+.color_fondo{
+	background-color: grey;
 }
+
 .main_title {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 30px;
 }
 .main_title h2 {
     text-transform: uppercase;
