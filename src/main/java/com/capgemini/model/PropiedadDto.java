@@ -14,6 +14,7 @@ public class PropiedadDto {
 	private String nombre;
 	private String tipoPropiedad;
 	private String ubicacion;
+	private String imagen;
 	/**
 	 * @return the direccion
 	 */
@@ -62,6 +63,13 @@ public class PropiedadDto {
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	
 	
 	
 

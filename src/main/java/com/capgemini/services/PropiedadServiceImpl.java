@@ -30,6 +30,7 @@ public class PropiedadServiceImpl implements PropiedadService{
 		dto.setNombre(p.getNombre());
 		dto.setTipoPropiedad(p.getTipoPropiedad().getDescripcion());
 		dto.setUbicacion(p.getUbicacion().getUbicacion());
+		dto.setImagen(p.getImagen());
 		return dto;
 	}
 	

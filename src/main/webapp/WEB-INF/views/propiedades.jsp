@@ -27,7 +27,7 @@ que sale toda la información correctamente se implementara aqui -->
 
 <div class="container-fluid color_fondo">
 	<div class="container">
-		<nav class="navbar navbar-inverse navbar-dark">
+		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">Portal de Reservas</a>
@@ -45,12 +45,14 @@ que sale toda la información correctamente se implementara aqui -->
 			<c:forEach items="${propiedades}" var="propiedades">
 				<div class="col-md-4 col-sm-5">
 					<div class="crane_container">
-						<a class="img-carbox"> <img src="{propiedades.imagen}" />
+						<div class="ribbon_3 popular"><span>${propiedades.tipoPropiedad}</span></div>
+						<a class="img-carbox"> <img src="${pageContext.request.contextPath}/resources/images/${propiedades.imagen}"/>
 						</a>
 
 						<div class="carbox-content">
-							<h2 class="carbox-title">${propiedades.nombre}</h2>
-							<h2 class="carbox-title">${propiedades.direccion}</h2>
+							<h2>${propiedades.nombre}</h2>
+							<h4>${propiedades.direccion}</h4>
+							<h4>${propiedades.ubicacion}</h4>
 
 						</div>
 						<div class="carbox-read-more">

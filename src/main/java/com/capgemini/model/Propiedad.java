@@ -43,6 +43,10 @@ public class Propiedad {
 	
 	@OneToMany(mappedBy = "propiedad", fetch = FetchType.EAGER)
 	private List<Reserva> reservas;
+	
+	@NotEmpty
+	@Column(name ="imagen", unique=true, nullable = false)
+	private String imagen;
 
 	public int getId_propiedad() {
 		return id_propiedad;
@@ -114,6 +118,16 @@ public class Propiedad {
 	 */
 	public void setReserva(List<Reserva> reserva) {
 		this.reservas = reserva;
+	}
+	
+	
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	@Override
