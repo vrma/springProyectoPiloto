@@ -7,9 +7,22 @@
 <html>
 <head>
 <style>
-	.row{
-		padding-top:100px;
-	}
+body {
+	background-color: #B9C6CA !important;
+}
+
+.row {
+	padding-top: 125px;
+}
+
+.login {
+	border: 2px solid grey;
+	padding-bottom: 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-radius: 5px;
+	background-color: white;
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>Login</title>
@@ -30,7 +43,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-xs-4"></div>
-			<div class="col-md-4 col-xs-4">
+			<div class="col-md-4 col-xs-4 login">
 				<form:form modelAttribute="login" mehtod="post">
 					<h3 class="text-center">Login de Usuario</h3>
 					<div class="form-group">
